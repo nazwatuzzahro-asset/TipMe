@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kamee Layout</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@heroicons/react@2.0.18/outline/index.js"></script>
+</head>
+<body class="bg-gray-100 p-4">
+    <!-- Navbar -->
+    <div class="max-w-3xl mx-auto bg-white p-4 shadow-md rounded-lg flex justify-between items-center">
+        <!-- Logo -->
+        <div class="text-lg font-bold text-blue-600">Kamee</div>
+
+        <!-- Search Bar -->
+        <div class="relative w-full max-w-md mx-4">
+            <input type="text" placeholder="Cari makanan favorit..." class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
+            <button class="absolute right-2 top-2 text-gray-500">
+                <!-- Heroicon Search -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M8 2a6 6 0 0 1 4.473 9.923l4.667 4.667a1 1 0 0 1-1.414 1.414l-4.667-4.667A6 6 0 1 1 8 2Zm0 2a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z" clip-rule="evenodd" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Icons: Cart & Profile -->
+        <div class="flex items-center space-x-4">
+            <!-- Keranjang -->
+            <button class="relative">
+                <!-- Heroicon Cart -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M3 3h2l.09.36L6.68 8h10.64l1.52-4.64L18.91 3H21a1 1 0 1 1 0 2h-1.18l-2.76 8.37a1 1 0 0 1-.95.63H8a1 1 0 0 1-.95-.63L4.68 5H3a1 1 0 1 1 0-2ZM7 14a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm10 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z"/>
+                </svg>
+                <span class="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold rounded-full px-2">3</span>
+            </button>
+
+            <!-- Profil -->
+            <button class="w-10 h-10 rounded-full overflow-hidden border-2 border-gray-300">
+                <img src="https://via.placeholder.com/40" alt="Profile">
+            </button>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="max-w-3xl mx-auto bg-gray-300 p-6 text-left text-lg font-semibold mt-4 rounded-lg border border-black">
+        Males beli makan? <br> Titip di Kamee aja...
+    </div>
+
+    <!-- Terlaris -->
+    <div class="max-w-3xl mx-auto mt-6">
+        <h2 class="font-bold">Terlaris dan mau habezz</h2>
+    <div class="grid grid-cols-3 gap-4 mt-2">
+            <div class="bg-white p-4 shadow rounded-lg text-center border border-black">
+                <div class="h-20 bg-gray-200 rounded"></div>
+                <p class="mt-2 font-bold">Ayam Geprek Bu Cindi</p>
+                <p>Rp 15.000</p>
+                <p class="text-sm text-gray-500">Sisa 5 lagi coy</p>
+            </div>
+            <div class="bg-white p-4 shadow rounded-lg text-center border border-black">
+                <div class="h-20 bg-gray-200 rounded"></div>
+                <p class="mt-2 font-bold">Ayam Geprek Bu Cindi</p>
+                <p>Rp 15.000</p>
+                <p class="text-sm text-gray-500">Sisa 5 lagi coy</p>
+            </div>
+            <div class="bg-white p-4 shadow rounded-lg text-center border border-black">
+                <div class="h-20 bg-gray-200 rounded"></div>
+                <p class="mt-2 font-bold">Ayam Geprek Bu Cindi</p>
+                <p>Rp 15.000</p>
+                <p class="text-sm text-gray-500">Sisa 5 lagi coy</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Kategori Titipan -->
+    <div class="max-w-3xl mx-auto mt-4">
+        <div class="flex rounded-lg overflow-hidden">
+            <button id="tokoBtn" class="w-1/2 py-2 text-center font-semibold bg-purple-100 text-black">Toko</button>
+            <button id="produkBtn" class="w-1/2 py-2 text-center font-semibold bg-gray-200 text-gray-600">Produk</button>
+        </div>
+    </div>
+
+    <!-- Daftar Produk -->
+    <div id="produkSection" class="max-w-3xl mx-auto mt-4 space-y-3">
+        <div class="grid grid-cols-3 gap-4 mt-2">
+            <div class="bg-white p-4 shadow rounded-lg text-center border border-black">
+                <div class="h-20 bg-gray-200 rounded"></div>
+                <p class="mt-2 font-bold">Ayam Geprek Bu Cindi</p>
+                <p>Rp 15.000</p>
+                <p class="text-sm text-gray-500">Sisa 5 lagi coy</p>
+            </div>
+            <div class="bg-white p-4 shadow rounded-lg text-center border border-black">
+                <div class="h-20 bg-gray-200 rounded"></div>
+                <p class="mt-2 font-bold">Ayam Geprek Bu Cindi</p>
+                <p>Rp 15.000</p>
+                <p class="text-sm text-gray-500">Sisa 5 lagi coy</p>
+            </div>
+            <div class="bg-white p-4 shadow rounded-lg text-center border border-black">
+                <div class="h-20 bg-gray-200 rounded"></div>
+                <p class="mt-2 font-bold">Ayam Geprek Bu Cindi</p>
+                <p>Rp 15.000</p>
+                <p class="text-sm text-gray-500">Sisa 5 lagi coy</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Daftar Toko (Hidden by Default) -->
+    <div id="tokoSection" class="max-w-3xl mx-auto mt-4 space-y-3 hidden">
+        <!-- Lokasi Pengantaran -->
+        <div class="max-w-3xl mx-auto mt-6 text-center">
+            <div class="flex justify-left gap-4 mt-2">
+                <button class="bg-white px-4 py-2 rounded-lg shadow">Gerbang belakang</button>
+                <button class="bg-white px-4 py-2 rounded-lg shadow">Kantin</button>
+                <button class="bg-white px-4 py-2 rounded-lg shadow">Gerbang depan</button>
+            </div>
+        </div>
+        <div class="bg-white p-4 shadow rounded-lg flex items-center border border-black">
+            <div class="w-16 h-16 bg-gray-200 rounded-lg"></div>
+            <div class="ml-4">
+                <p class="font-bold">Nama toko</p>
+                <p class="text-sm text-gray-500">Ongkir: -</p>
+            </div>
+        </div>
+        <div class="bg-white p-4 shadow rounded-lg flex items-center border border-black">
+            <div class="w-16 h-16 bg-gray-200 rounded-lg"></div>
+            <div class="ml-4">
+                <p class="font-bold">Nama toko</p>
+                <p class="text-sm text-gray-500">Ongkir: -</p>
+            </div>
+        </div>
+        <div class="bg-white p-4 shadow rounded-lg flex items-center border border-black">
+            <div class="w-16 h-16 bg-gray-200 rounded-lg"></div>
+            <div class="ml-4">
+                <p class="font-bold">Nama toko</p>
+                <p class="text-sm text-gray-500">Ongkir: -</p>
+            </div>
+        </div>
+        <div class="bg-white p-4 shadow rounded-lg flex items-center border border-black">
+            <div class="w-16 h-16 bg-gray-200 rounded-lg"></div>
+            <div class="ml-4">
+                <p class="font-bold">Nama toko</p>
+                <p class="text-sm text-gray-500">Ongkir: -</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const tokoBtn = document.getElementById("tokoBtn");
+        const produkBtn = document.getElementById("produkBtn");
+        const tokoSection = document.getElementById("tokoSection");
+        const produkSection = document.getElementById("produkSection");
+
+        tokoBtn.addEventListener("click", () => {
+            tokoSection.classList.remove("hidden");
+            produkSection.classList.add("hidden");
+            tokoBtn.classList.add("bg-purple-100", "text-black");
+            tokoBtn.classList.remove("bg-gray-200", "text-gray-600");
+            produkBtn.classList.add("bg-gray-200", "text-gray-600");
+            produkBtn.classList.remove("bg-purple-100", "text-black");
+        });
+
+        produkBtn.addEventListener("click", () => {
+            produkSection.classList.remove("hidden");
+            tokoSection.classList.add("hidden");
+            produkBtn.classList.add("bg-purple-100", "text-black");
+            produkBtn.classList.remove("bg-gray-200", "text-gray-600");
+            tokoBtn.classList.add("bg-gray-200", "text-gray-600");
+            tokoBtn.classList.remove("bg-purple-100", "text-black");
+        });
+    </script>
+
+    <!-- Review Customer -->
+    <div class="max-w-3xl mx-auto mt-6">
+        <h2 class="font-bold">Review Customer</h2>
+        <div class="grid grid-cols-3 gap-4 mt-2">
+            <div class="bg-gray-300 p-6 rounded-lg"></div>
+            <div class="bg-gray-300 p-6 rounded-lg"></div>
+            <div class="bg-gray-300 p-6 rounded-lg"></div>
+        </div>
+        <div class="mt-4 bg-gray-300 p-6 rounded-lg"></div>
+    </div>
+
+</body>
+</html>
