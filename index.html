@@ -9,48 +9,88 @@
 </head>
 <body class="bg-gray-100 p-4">
     <!-- Navbar -->
-    <div class="max-w-3xl mx-auto bg-white p-4 shadow-md rounded-lg flex justify-between items-center">
-        <!-- Logo -->
-        <div class="text-lg font-bold text-blue-600">Kamee</div>
+    <div class="fixed top-0 left-0 w-full bg-white shadow-md flex justify-between items-center px-4 py-3 pb-4 z-50">
+            <!-- Sidebar Toggle + Logo -->
+             <div class="flex items-center gap-2">
+                <!-- Menu Button (Sidebar Toggle) -->
+                 <button id="menuBtn" class="text-gray-700 focus:outline-none">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7"/>
+                    </svg>
+                </button>
 
+        <!-- Logo -->
+         <img src="images/tipme_logo.png" alt="Logo" class="w-32 h-auto ml-6">
+        </div>
+        
         <!-- Search Bar -->
-        <div class="relative w-full max-w-md mx-4">
+         <div class="relative w-full max-w-md hidden sm:block">
             <input type="text" placeholder="Cari makanan favorit..." class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
-            <button class="absolute right-2 top-2 text-gray-500">
-                <!-- Heroicon Search -->
+            <button class="absolute right-2 top-2 text-black">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M8 2a6 6 0 0 1 4.473 9.923l4.667 4.667a1 1 0 0 1-1.414 1.414l-4.667-4.667A6 6 0 1 1 8 2Zm0 2a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z" clip-rule="evenodd" />
+                    <path fill-rule="evenodd" d="M8 2a6 6 0 0 1 4.473 9.923l4.667 4.667a1 1 0 0 1-1.414 1.414l-4.667-4.667A6 6 0 1 1 8 2Zm0 2a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z" clip-rule="evenodd"/>
                 </svg>
             </button>
         </div>
-
+        
         <!-- Icons: Cart & Profile -->
-        <div class="flex items-center space-x-4">
+        <div class="flex items-center space-x-6">
             <!-- Keranjang -->
             <button class="relative">
-                <!-- Heroicon Cart -->
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M3 3h2l.09.36L6.68 8h10.64l1.52-4.64L18.91 3H21a1 1 0 1 1 0 2h-1.18l-2.76 8.37a1 1 0 0 1-.95.63H8a1 1 0 0 1-.95-.63L4.68 5H3a1 1 0 1 1 0-2ZM7 14a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm10 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z"/>
-                </svg>
+                <img src="images/button_keranjang.png" alt="icon_review" class="w-8 h-auto">
                 <span class="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold rounded-full px-2">3</span>
             </button>
-
+    
             <!-- Profil -->
-            <button class="w-10 h-10 rounded-full overflow-hidden border-2 border-gray-300">
-                <img src="https://via.placeholder.com/40" alt="Profile">
+            <button class="w-10 h-10 rounded-full overflow-hidden">
+                <img src="images/button_profile.png" alt="Profile">
             </button>
         </div>
     </div>
-
+    
+    <!-- Sidebar -->
+    <div id="sidebar" class="fixed top-0 left-0 w-64 h-full bg-white shadow-lg transform -translate-x-full transition-transform duration-300 z-50">
+        <div class="p-4 border-b flex justify-between items-center">
+            <h2 class="text-lg font-bold">Menu</h2>
+            <button id="closeMenu" class="text-gray-700 focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+        </div>
+        <nav class="p-4">
+            <a href="#" class="block py-2 px-4 text-gray-700 hover:bg-gray-200 rounded">Home</a>
+            <a href="#" class="block py-2 px-4 text-gray-700 hover:bg-gray-200 rounded">Kategori</a>
+            <a href="#" class="block py-2 px-4 text-gray-700 hover:bg-gray-200 rounded">Promo</a>
+            <a href="#" class="block py-2 px-4 text-gray-700 hover:bg-gray-200 rounded">Pesanan</a>
+            <a href="#" class="block py-2 px-4 text-gray-700 hover:bg-gray-200 rounded">Bantuan</a>
+        </nav>
+    </div>
+    
+    <!-- Script Toggle Sidebar -->
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const closeMenu = document.getElementById('closeMenu');
+        const sidebar = document.getElementById('sidebar');
+    
+        menuBtn.addEventListener('click', () => {
+            sidebar.classList.remove('-translate-x-full');
+        });
+    
+        closeMenu.addEventListener('click', () => {
+            sidebar.classList.add('-translate-x-full');
+        });
+    </script>
+    
     <!-- Hero Section -->
-    <div class="max-w-3xl mx-auto bg-gray-300 p-6 text-left text-lg font-semibold mt-4 rounded-lg border border-black">
+    <div class="max-w-3xl mx-auto bg-gray-300 p-6 text-left text-lg font-semibold mt-20 rounded-lg border border-black">
         Males beli makan? <br> Titip di Kamee aja...
     </div>
 
     <!-- Terlaris -->
     <div class="max-w-3xl mx-auto mt-6">
         <h2 class="font-bold">Terlaris dan mau habezz</h2>
-    <div class="grid grid-cols-3 gap-4 mt-2">
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-2">
             <div class="bg-white p-4 shadow rounded-lg text-center border border-black">
                 <div class="h-20 bg-gray-200 rounded"></div>
                 <p class="mt-2 font-bold">Ayam Geprek Bu Cindi</p>
@@ -82,7 +122,7 @@
 
     <!-- Daftar Produk -->
     <div id="produkSection" class="max-w-3xl mx-auto mt-4 space-y-3">
-        <div class="grid grid-cols-3 gap-4 mt-2">
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-2">
             <div class="bg-white p-4 shadow rounded-lg text-center border border-black">
                 <div class="h-20 bg-gray-200 rounded"></div>
                 <p class="mt-2 font-bold">Ayam Geprek Bu Cindi</p>
@@ -114,6 +154,8 @@
                 <button class="bg-white px-4 py-2 rounded-lg shadow">Gerbang depan</button>
             </div>
         </div>
+
+        <!-- Card Toko -->
         <div class="bg-white p-4 shadow rounded-lg flex items-center border border-black">
             <div class="w-16 h-16 bg-gray-200 rounded-lg"></div>
             <div class="ml-4">
@@ -170,15 +212,49 @@
     </script>
 
     <!-- Review Customer -->
-    <div class="max-w-3xl mx-auto mt-6">
-        <h2 class="font-bold">Review Customer</h2>
-        <div class="grid grid-cols-3 gap-4 mt-2">
-            <div class="bg-gray-300 p-6 rounded-lg"></div>
-            <div class="bg-gray-300 p-6 rounded-lg"></div>
-            <div class="bg-gray-300 p-6 rounded-lg"></div>
+    <div class="max-w-3xl mx-auto mt-6 p-4 bg-white rounded-lg shadow">
+        <h2 class="font-bold text-lg mb-4">Review Customer</h2>
+        
+        <!-- Input Review -->
+        <div class="relative mb-4">
+            <input type="text" placeholder="Tulis pengalaman anda bersama TipMe!" 
+                class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none pr-10">
+                <button class="absolute right-3 top-1/2 transform -translate-y-1/2 text-blue-500 font-semibold hover:underline">
+                    Kirim
+                </button>
         </div>
-        <div class="mt-4 bg-gray-300 p-6 rounded-lg"></div>
+    
+        <!-- Daftar Review -->
+        <div class="space-y-4">
+            <!-- Review 1 -->
+            <div class="flex items-start space-x-3">
+                <div class="w-10 h-10 bg-gray-300 rounded-full"></div>
+                <div class="bg-gray-100 p-3 rounded-lg w-full">
+                    <p class="font-semibold">Budi Santoso</p>
+                    <p class="text-sm text-gray-700">Pelayanan cepat dan sangat membantu! Ga perlu keluar rumah lagi buat beli makan.</p>
+                </div>
+            </div>
+    
+            <!-- Review 2 -->
+            <div class="flex items-start space-x-3">
+                <div class="w-10 h-10 bg-gray-300 rounded-full"></div>
+                <div class="bg-gray-100 p-3 rounded-lg w-full">
+                    <p class="font-semibold">Ayu Permata</p>
+                    <p class="text-sm text-gray-700">Pesanan sampai tepat waktu, kurirnya juga ramah banget! Suka banget pakai TipMe! 😍</p>
+                </div>
+            </div>
+    
+            <!-- Review 3 -->
+            <div class="flex items-start space-x-3">
+                <div class="w-10 h-10 bg-gray-300 rounded-full"></div>
+                <div class="bg-gray-100 p-3 rounded-lg w-full">
+                    <p class="font-semibold">Dimas Pratama</p>
+                    <p class="text-sm text-gray-700">Aplikasi yang sangat membantu, apalagi buat mahasiswa kayak aku yang mager ke luar kosan. 👍</p>
+                </div>
+            </div>
+        </div>
     </div>
+
 
 </body>
 </html>
